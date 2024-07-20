@@ -1,5 +1,19 @@
-#canvas{
+#canvas {
+    display: flex;
     width: 500px;
     height: 500px;
     border: solid;
-};
+}
+
+.helter {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.skelter {
+    display: flex;
+    flex-grow: 1;
+    border: solid;
+    border-width: 1px;
+}

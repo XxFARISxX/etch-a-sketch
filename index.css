@@ -17,3 +17,10 @@
     border: solid;
     border-width: 1px;
 }
+
+#yo {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border: solid;
+}

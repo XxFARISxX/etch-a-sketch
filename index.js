@@ -1,43 +1,74 @@
-// this function adds a grid made of divs i will call "helter/skelter", inside the div called "canvas".
-function grid() {
+const btn = document.querySelector("#btn");
 
-    const canvas = document.querySelector("#canvas");
+//button takes user input and makes grid with it.
+btn.addEventListener("click", () => {
 
-    /*lets say you need a 16x16 grid. the for loop below will run 16 times. 
-      creating 16 long vertical divs, called "helters".
-      and 16 divs, called "skelters", inside of each helter.*/
-    for (let i = 0; i < 16; i++) {
-        const helter = document.createElement("div");
+  //gets user input by a prompt.
+  let input = prompt("add a number for grid size");
 
-        helter.className = "helter";
+  //turns input to number.
+  let btnPrompt = parseInt(input);
 
-        //this will append each helter inside the canvas.
-        canvas.appendChild(helter);
+  //if the input is valid, runs the grid function using number from user input.
+  if (btnPrompt > 100 || input === "") {
 
-        /*this loop runs 16 times each time the helter loop runs once. 
-          since it's inside of the helter loop. 
-          it will create 16 skelters, inside each helter.*/
-        for (let i = 0; i < 16; i++) {
-            const skelter = document.createElement("div");
+    alert("input can't be empty, or greater then 100.");
 
-            skelter.className = "skelter";
+  } else {
 
-            //this appends the skelters inside each helter.
-            helter.appendChild(skelter);
+    return grid(btnPrompt);
 
-            /*this function and eventListener below it adds color to a skelter, 
-              when a mouse pointer moves onto it.
-              acting as a pencil/marker or a "pen", on the whole canvas.
-              more colors will be added later, and the whole setup will change.*/
-            function pen () {
-              skelter.style.background = "blue";
-              skelter.style.color = "blue";
-            };
-            skelter.addEventListener("mouseenter", pen);
+  };
 
-        };
+});
 
-    };
+/*this function adds a grid made of divs i will call "helter/skelter", inside the div called "canvas".
+  default grid size is 16.*/
+function grid(num = 16) {
+
+  let gridSize = num;
+
+  const canvas = document.querySelector("#canvas");
+
+  /*if a grid already exists inside the canvas, this will remove it. 
+    the grid that is about to be created, will take it's place.*/
+  canvas.replaceChildren();
+
+  /*say you need a 16x16 grid. the for loop below will run 16 times. 
+    creating 16 long vertical divs, called "helters".
+    and 16 divs, called "skelters", inside of each helter.*/
+  for (let i = 0; i < gridSize; i++) {
+      const helter = document.createElement("div");
+
+      helter.className = "helter";
+
+      //this will append each helter inside the canvas.
+      canvas.appendChild(helter);
+
+      /*this loop runs 16 times each time the helter loop runs once. 
+        since it's inside of the helter loop. 
+        it will create 16 skelters, inside each helter.*/
+      for (let i = 0; i < gridSize; i++) {
+          const skelter = document.createElement("div");
+
+          skelter.className = "skelter";
+
+          //this appends the skelters inside each helter.
+          helter.appendChild(skelter);
+
+          /*this function and eventListener below it adds color to a skelter, 
+            when a mouse pointer moves onto it.
+            acting as a pencil/marker or a "pen", on the whole canvas.
+            more colors will be added later, and the whole setup will change.*/
+          function pen () {
+            skelter.style.background = "blue";
+            skelter.style.color = "blue";
+          };
+          skelter.addEventListener("mouseenter", pen);
+
+      };
+
+  };
 
 };
 

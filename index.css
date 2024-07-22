@@ -1,3 +1,14 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+#interface {
+    width: 200px;
+    height: 500px;
+    border: solid;
+}
+
 #canvas {
     display: flex;
     width: 500px;
@@ -16,11 +27,4 @@
     flex-grow: 1;
     border: solid;
     border-width: 1px;
-}
-
-#yo {
-    display: flex;
-    width: 500px;
-    height: 500px;
-    border: solid;
 }

@@ -60,11 +60,10 @@ function grid(num = 16) {
             when a mouse pointer moves onto it.
             acting as a pencil/marker or a "pen", on the whole canvas.
             more colors will be added later, and the whole setup will change.*/
-          function pen () {
-            skelter.style.background = "blue";
-            skelter.style.color = "blue";
-          };
-          skelter.addEventListener("mouseenter", pen);
+            function pen () {
+              skelter.style.background = "black";
+            };
+            skelter.addEventListener("mouseenter", pen);
 
       };
 

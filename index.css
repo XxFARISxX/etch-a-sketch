@@ -25,6 +25,4 @@ body {
 .skelter {
     display: flex;
     flex-grow: 1;
-    border: solid;
-    border-width: 1px;
 }

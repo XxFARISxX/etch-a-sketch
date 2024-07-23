@@ -9,10 +9,9 @@ btn.addEventListener("click", () => {
   //turns input to number.
   let btnPrompt = parseInt(input);
 
-  /*if the input is valid, runs the grid function using number from user input.
-    btnPrompt > 100 checks if input is greater then 100.
-    input != "" checks if input is a number. input === "" checks if input is not empty.
-    input === null checks if the prompt was canceled.*/
+  /*if the input is invalid, throws an alert. else, runs the grid function using number from user input.
+    btnPrompt > 100/< 1 checks if input is greater then 100 or less then 1.
+    isNaN(btnPrompt) checks if input is not a number.*/
   if (btnPrompt > 100 || btnPrompt < 1 || isNaN(btnPrompt)) {
 
     alert("invalid input");

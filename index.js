@@ -4,15 +4,18 @@ const btn = document.querySelector("#btn");
 btn.addEventListener("click", () => {
 
   //gets user input by a prompt.
-  let input = prompt("add a number for grid size");
+  let input = prompt("add a number for grid size. input can't be less then 1 or greater then 100. input has to be a number.");
 
   //turns input to number.
   let btnPrompt = parseInt(input);
 
-  //if the input is valid, runs the grid function using number from user input.
-  if (btnPrompt > 100 || input === "") {
+  /*if the input is valid, runs the grid function using number from user input.
+    btnPrompt > 100 checks if input is greater then 100.
+    input != "" checks if input is a number. input === "" checks if input is not empty.
+    input === null checks if the prompt was canceled.*/
+  if (btnPrompt > 100 || btnPrompt < 1 || isNaN(btnPrompt)) {
 
-    alert("input can't be empty, or greater then 100.");
+    alert("invalid input");
 
   } else {
 

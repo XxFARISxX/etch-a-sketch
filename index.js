@@ -32,7 +32,7 @@ function grid(num = 16) {
 
   const canvas = document.querySelector("#canvas");
 
-  const body = document.querySelector("body");
+  const html = document.querySelector("html");
 
   /*if a grid already exists inside the canvas, this will remove it. 
     the grid that is about to be created, will take it's place.*/
@@ -81,7 +81,7 @@ function grid(num = 16) {
 
       /*when a mouse button is pressed anywhere on the body and the cursor moves onto a skelter, 
         pen function runs and color is added to that skelter. */
-      body.addEventListener("mousedown", (e) => {
+      html.addEventListener("mousedown", (e) => {
         skelter.addEventListener("mouseenter", pen);
         //stops cursor from turning into not-allowed symbol. because that happened sometimes.
         e.preventDefault();
@@ -89,7 +89,7 @@ function grid(num = 16) {
 
       /*when mouse button is lifted, pen function stops running.
         because this removes the event listeners from all the skelters. */
-      body.addEventListener("mouseup", () => {
+      html.addEventListener("mouseup", () => {
 
         skelter.removeEventListener("mouseenter", pen);
 

@@ -60,11 +60,22 @@ function grid(num = 16) {
       //this appends the skelters inside each helter.
       helter.appendChild(skelter);
 
-      /*this function and eventListener below it adds color to a skelter, 
-        when a mouse pointer moves onto it.
+      let opacity = 0;
+
+      /*this function and eventListeners below it add color to a skelter, 
+        when a mouse button is pressed and cursor moves onto it.
         acting as a pencil/marker or a "pen", on the whole canvas.
-        more colors will be added later, and the whole setup will change.*/
-      function pen () {
+        more colors will be added later, and the whole setup will change.
+        opacity of the colored skelter is 20%/0.2. going over it again increases it by 20%/0.2,
+        until it gets to 100%/1.*/
+      function pen() {
+        /*initial value of the opacity variable is 0.
+          the if statement will add 0.2 to it, each time cursor moves over the skelter.
+          when value reaches 1, it stops adding. */
+        if (opacity < 1)  {
+          opacity += 0.2;
+        }
+        skelter.style.opacity = opacity;
         skelter.style.background = "black";
       };
 

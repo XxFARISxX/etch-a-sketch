@@ -1,6 +1,13 @@
 const btn = document.querySelector("#btn");
 const randomBtn = document.querySelector("#randomBtn");
 const blackBtn = document.querySelector("#blackBtn");
+const redBtn = document.querySelector("#redBtn");
+const orangeBtn = document.querySelector("#orangeBtn");
+const yellowBtn = document.querySelector("#yellowBtn");
+const greenBtn = document.querySelector("#greenBtn");
+const blueBtn = document.querySelector("#blueBtn");
+const indigoBtn = document.querySelector("#indigoBtn");
+const violetBtn = document.querySelector("#violetBtn");
 
 let gridSize = 16;
 let randomCheck = false;
@@ -15,11 +22,68 @@ randomBtn.addEventListener("click", () => {
 
 });
 
+//these buttons are used to change color of the pen.
 blackBtn.addEventListener("click", () => {
 
   randomCheck = false;
 
   color = "black";
+
+});
+
+redBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "red";
+
+});
+
+orangeBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "orange";
+
+});
+
+yellowBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "yellow";
+
+});
+
+greenBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "green";
+
+});
+
+blueBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "blue";
+
+});
+
+indigoBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "indigo";
+
+});
+
+violetBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "violet";
 
 });
 

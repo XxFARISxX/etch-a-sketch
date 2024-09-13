@@ -1,6 +1,27 @@
 const btn = document.querySelector("#btn");
+const randomBtn = document.querySelector("#randomBtn");
+const blackBtn = document.querySelector("#blackBtn");
 
 let gridSize = 16;
+let randomCheck = false;
+let color = "black";
+
+/*when clicked, this button turns randomCheck value from false to true. because of this, 
+  the if statement inside the pen function below will change ink value with randomRGB function. 
+  read comments inside the pen function to make more sense.*/
+randomBtn.addEventListener("click", () => {
+
+  randomCheck = true;
+
+});
+
+blackBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "black";
+
+});
 
 //button takes user input and makes grid with it.
 btn.addEventListener("click", () => {
@@ -28,6 +49,17 @@ btn.addEventListener("click", () => {
   };
 
 });
+
+//generates random number between 0 to 255.
+function randomRGBNum() {
+  return Math.floor(Math.random() * 256);
+};
+
+/*returns a template string that runs randomRGBnum 3 separate times,
+  turning it into a string of  random RGB color codes. */
+function randomRGB() {
+  return `rgb(${randomRGBNum()},${randomRGBNum()},${randomRGBNum()})`
+};
 
 /*this function adds a grid made of divs i will call "helter/skelter", inside the div called "canvas".
   default grid size is 16.*/
@@ -72,6 +104,19 @@ function grid() {
         opacity of the colored skelter is 20%/0.2. going over it again increases it by 20%/0.2,
         until it gets to 100%/1.*/
       function pen() {
+
+        /*the ink's value is the color variable.
+          the color's value can be changed with different color buttons.
+          right now, only random color and black color buttons exist. */
+        let ink = color;
+
+        /*if randomCheck is true, changes ink value with randomRGB function.
+          which returns a string of random RGB codes.
+          giving the skelters a random color, with each interaction. */
+        if (randomCheck === true) {
+          ink = randomRGB();
+        };
+
         /*initial value of the opacity variable is 0.
           the if statement will add 0.2 to it, each time cursor moves over the skelter.
           when value reaches 1, it stops adding. */
@@ -79,7 +124,7 @@ function grid() {
           opacity += 0.2;
         }
         skelter.style.opacity = opacity;
-        skelter.style.background = "black";
+        skelter.style.background = ink;
       };
 
       /*when a mouse button is pressed anywhere on the body and the cursor moves onto a skelter, 

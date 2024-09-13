@@ -1,4 +1,5 @@
 const btn = document.querySelector("#btn");
+const eraserBtn = document.querySelector("#eraserBtn");
 const randomBtn = document.querySelector("#randomBtn");
 const blackBtn = document.querySelector("#blackBtn");
 const redBtn = document.querySelector("#redBtn");
@@ -13,8 +14,17 @@ let gridSize = 16;
 let randomCheck = false;
 let color = "black";
 
+// this just turns the colored skelters back to white.
+eraserBtn.addEventListener("click", () => {
+
+  randomCheck = false;
+
+  color = "white";
+
+});
+
 /*when clicked, this button turns randomCheck value from false to true. because of this, 
-  the if statement inside the pen function below will change ink value with randomRGB function. 
+  the if statement inside the pen function below will change ink value from color to randomRGB function. 
   read comments inside the pen function to make more sense.*/
 randomBtn.addEventListener("click", () => {
 
@@ -22,7 +32,8 @@ randomBtn.addEventListener("click", () => {
 
 });
 
-//these buttons are used to change color of the pen.
+/*these buttons are used to change color of the pen. the randomCheck is false,
+  in case the randomBtn was pressed before. i am sure there are better ways to do this.*/
 blackBtn.addEventListener("click", () => {
 
   randomCheck = false;
@@ -186,7 +197,13 @@ function grid() {
           when value reaches 1, it stops adding. */
         if (opacity < 1)  {
           opacity += 0.2;
-        }
+        };
+
+        //this resets the opacity of the skelter being erased.
+        if (color == "white") {
+          opacity = 0
+        };
+
         skelter.style.opacity = opacity;
         skelter.style.background = ink;
       };

@@ -1,5 +1,7 @@
 const btn = document.querySelector("#btn");
 
+let gridSize = 16;
+
 //button takes user input and makes grid with it.
 btn.addEventListener("click", () => {
 
@@ -18,7 +20,10 @@ btn.addEventListener("click", () => {
 
   } else {
 
-    return grid(btnPrompt);
+    /*this will replace the default grid size(which is 16x16) with user input.
+      then run the grid function. */
+    gridSize = btnPrompt;
+    return grid();
 
   };
 
@@ -26,9 +31,7 @@ btn.addEventListener("click", () => {
 
 /*this function adds a grid made of divs i will call "helter/skelter", inside the div called "canvas".
   default grid size is 16.*/
-function grid(num = 16) {
-
-  let gridSize = num;
+function grid() {
 
   const canvas = document.querySelector("#canvas");
 

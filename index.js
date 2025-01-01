@@ -200,7 +200,7 @@ function grid() {
         };
 
         //this resets the opacity of the skelter being erased.
-        if (color == "white") {
+        if (ink == "white") {
           opacity = 0
         };
 

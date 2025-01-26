@@ -1,15 +1,3 @@
-const btn = document.querySelector("#btn");
-const eraserBtn = document.querySelector("#eraserBtn");
-const randomBtn = document.querySelector("#randomBtn");
-const blackBtn = document.querySelector("#blackBtn");
-const redBtn = document.querySelector("#redBtn");
-const orangeBtn = document.querySelector("#orangeBtn");
-const yellowBtn = document.querySelector("#yellowBtn");
-const greenBtn = document.querySelector("#greenBtn");
-const blueBtn = document.querySelector("#blueBtn");
-const indigoBtn = document.querySelector("#indigoBtn");
-const violetBtn = document.querySelector("#violetBtn");
-
 let gridSize = 16;
 let randomCheck = false;
 let color = "black";

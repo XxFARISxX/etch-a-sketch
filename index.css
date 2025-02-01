@@ -13,6 +13,10 @@ body {
     width: 200px;
     height: 500px;
     border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
 }
 
 #canvas {
